@@ -40,7 +40,7 @@ const store = new Vuex.Store({
       {
         title: "True news",
         body: "this is some true news ajasd fjfads jklf adsjkdfs jk djklafs djkladfs jas dfjadfsjadfs jkladfs jkladfs as jkaas fjklas dfjkas dfas dfas dfjkla fsdjads fjkads fadfs ",
-        value: 200,
+        value: 1000,
         submitted: Date.now() - 1000,
         result: 1,
         challenges: [{reason: "this is a reason this is wrong."}],
@@ -49,7 +49,7 @@ const store = new Vuex.Store({
       {
         title: "Trueish news",
         body: "this is some true news ajasd fjfads jklf adsjkdfs jk djklafs djkladfs jas dfjadfsjadfs jkladfs jkladfs as jkaas fjklas dfjkas dfas dfas dfjkla fsdjads fjkads fadfs ",
-        value: 200,
+        value: 30,
         submitted: Date.now() - 500,
         result: -1,
         challenges: [{reason: "this is a reason this is wrong."}],
