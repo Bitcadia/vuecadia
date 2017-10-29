@@ -24,7 +24,7 @@
     </v-navigation-drawer> -->
     <v-toolbar color="primary" dark fixed app :clipped-left="clipped" extended>
       <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon> -->
-      <v-flex xs12 class="text-xs-center" @click="$router.push({ path: `/` })"><v-toolbar-title><v-flex xs12 class="text-xs-center">{{title}}</v-flex></v-toolbar-title></v-flex>
+      <v-flex xs12 class="text-xs-center" @click="$router.push({ path: `/` })"><v-toolbar-title><v-flex xs12 class="text-xs-center"><img style="margin-top: 60px" width="300" src="public/logo.png" alt="Bitcadia"></v-flex></v-toolbar-title></v-flex>
       <v-btn
               color="pink"
               dark

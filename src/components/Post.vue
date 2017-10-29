@@ -107,7 +107,7 @@
       styleBadge(item) {
         let result = this.badge(item);
         if (result == "challenged") {
-          return "yellow"
+          return "warning"
         } else if (result == "unchallenged") {
           return "primary"
         } else if (result == "True") {
