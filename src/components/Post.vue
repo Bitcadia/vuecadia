@@ -88,12 +88,31 @@
     methods: {
       challenge() {
         this.$store.commit("challenge", {id:parseInt(this.$route.params.id), reason: this.reason});
+
+        bitcadiaInstance.challengeClaim(
+          this.$route.params.id,
+          this.reason,
+          { from: web3.eth.accounts[0] }, 
+          function(error, txHash) {
+            if (error) { console.log('error', error) }        
+            console.log('txHash', txHash)
+          });
+
         this.reason = "";
         this.dialog = false;
         this.snackbar = true;
       },
       judge(result) {
         this.$store.commit("judge", {id:parseInt(this.$route.params.id), result: parseInt(result)});
+
+        bitcadiaInstance.disputeClaim(
+          this.$route.params.id,
+          parseInt(result) > 0,
+          { from: web3.eth.accounts[0] }, 
+          function(error, txHash) {
+            if (error) { console.log('error', error) }        
+            console.log('txHash', txHash)
+          });
       },
       badge(item) {
         if (item.result === 0) {

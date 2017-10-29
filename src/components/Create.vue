@@ -49,6 +49,18 @@
     },
     methods: {
       submit: function submit() {
+        
+        bitcadiaInstance.newClaim(
+          this.title, 
+          this.body, 
+          this.value,
+          new Date().getTime(),
+          { from: web3.eth.accounts[0] }, 
+          function(error, txHash) {
+            if (error) { console.log('error', error) }        
+            console.log('txHash', txHash)            
+          });
+
         this.$store.commit("create", {title:this.title, body:this.body, value:this.value});
         this.title = "";
         this.value = null;

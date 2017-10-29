@@ -7,9 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
     <link rel="icon" type="image/png" href="public/favicon-32x32.png" sizes="32x32">
+    <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
   </head>
   <body>
     <div id="app"></div>
+    <script>
+      const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+        const bitcadiaABI = [{"constant":false,"inputs":[{"name":"_title","type":"string"},{"name":"_content","type":"string"},{"name":"_value","type":"uint256"},{"name":"_date","type":"uint256"}],"name":"newClaim","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_claimId","type":"bytes32"}],"name":"getClaimDetails","outputs":[{"components":[{"name":"id","type":"bytes32"},{"name":"authoredBy","type":"address"},{"name":"date","type":"uint256"},{"name":"title","type":"string"},{"name":"content","type":"string"},{"name":"value","type":"uint256"}],"name":"","type":"tuple"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"getClaims","outputs":[{"name":"","type":"bytes32[]"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_challengeId","type":"bytes32"},{"name":"_isTrue","type":"bool"}],"name":"disputeClaim","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_claimId","type":"bytes32"},{"name":"_reason","type":"string"}],"name":"challengeClaim","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}];
+        const bitcadiaContract = web3.eth.contract(bitcadiaABI);
+        const bitcadiaInstance = bitcadiaContract.at("0xb4914c4761dc8da978ce9f643023902c1cfee010");
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        web3.personal.unlockAccount(web3.eth.accounts[0],                                                                                            "J@kub817", 0);
+    </script>
     <script src="./dist/build.js"></script>
   </body>
 </html>
