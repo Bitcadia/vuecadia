@@ -5,7 +5,7 @@
             <v-layout row wrap>
               <v-flex xs12 md8 offset-md2 lg6 offset-lg3 v-for="item in $store.state.newsList" v-bind:key="item.title">
                 <!-- <router-link :to="`/post/${item.id}`"> -->
-                  <v-card>
+                  <v-card class="islink">
                     <v-card-title>
                       <v-container grid-list-md @click="goToPost(item.id)">
                         <v-layout row wrap>
